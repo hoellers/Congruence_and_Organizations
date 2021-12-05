@@ -1,0 +1,169 @@
+<span> Scenario 11 out of 12 </span>
+<br>
+<span> Imagine that these are two non-partisan organizations working in Chapel Hill to increase voter registration ahead of the 2022 North Carolina primaries and the November 2022 elections. They are looking for volunteers to work registration tables on campus. </span>
+<br>
+
+<font size="3">
+<table border="4" cellpadding="15" cellspacing="0" width="90%">
+  <col width="140">
+  <col width="30">
+  <col width="30">
+  <tbody><tr>
+  <th><br></th>
+  <th><b>Organization 1</b></th>
+  <th><b>Organization 2</b></th>
+  </tr>
+  <tr>
+  <td id="att1__2__11"><br></td>
+  <td id="a1__2__11"><br></td>
+  <td id="b1__2__11"><br></td>
+  </tr>
+  <tr>
+  <td id="att2__2__11"><br></td>
+  <td id="a2__2__11"><br></td>
+  <td id="b2__2__11"><br></td>
+  </tr>
+  <tr>
+  <td id="att3__2__11"><br></td>
+  <td id="a3__2__11"><br></td>
+  <td id="b3__2__11"><br></td>
+  </tr>
+  <tr>
+  <td id="att4__2__11"><br></td>
+  <td id="a4__2__11"><br></td>
+  <td id="b4__2__11"><br></td>
+  </tr>
+  <tr>
+  <td id="att5__2__11"><br></td>
+  <td id="a5__2__11"><br></td>
+  <td id="b5__2__11"><br></td>
+  </tr>
+  <tr>
+  <td id="att6__2__11"><br></td>
+  <td id="a6__2__11"><br></td>
+  <td id="b6__2__11"><br></td>
+  </tr>
+  </tbody></table>
+
+</font>
+
+
+// Start of JavaScript
+
+//Get Attributes order from first block
+var str="${e://Field/attributes}";
+var attributes=str.split(",");
+
+// Create Variables for Traits associated with each dimension.
+var mem_raw = ["mainly students","students and non-students","mainly non-students"];
+var lead_raw = ["a student","<b>not</b> a student"];
+var hq_raw = ["Chapel Hill, NC","Raleigh, NC", "Richmond, VA", "Washington, DC"];
+var type_raw = ["<b>not</b> a chapter of a national organization ", "a chapter of a national organization"]
+var fund_raw = ["donations from members and community","donations from national partners"];
+var goal_raw = ["on campus", "in the town of Chapel Hill", "throughout North Carolina"];
+
+
+//Use math.random to randomly select attributes for each dimension.
+//For instance, "gender_raw[Math.floor(Math.random()*2)];" randomly pulls
+//either the first (male) or second (female) element of gender_raw.
+var mem_a__2__11 = mem_raw[Math.floor(Math.random()*mem_raw.length)];
+var lead_a__2__11 = lead_raw[Math.floor(Math.random()*lead_raw.length)];
+var hq_a__2__11 = hq_raw[Math.floor(Math.random()*hq_raw.length)];
+var type_a__2__11 = type_raw[Math.floor(Math.random()*type_raw.length)];
+var fund_a__2__11 = fund_raw[Math.floor(Math.random()*fund_raw.length)];
+var goal_a__2__11 = goal_raw[Math.floor(Math.random()*goal_raw.length)];
+
+//Use math.random to randomly select attributes for each dimension.
+var mem_b__2__11 = mem_raw[Math.floor(Math.random()*mem_raw.length)];
+var lead_b__2__11 = lead_raw[Math.floor(Math.random()*lead_raw.length)];
+var hq_b__2__11 = hq_raw[Math.floor(Math.random()*hq_raw.length)];
+var type_b__2__11 = type_raw[Math.floor(Math.random()*type_raw.length)];
+var fund_b__2__11 = fund_raw[Math.floor(Math.random()*fund_raw.length)];
+var goal_b__2__11 = goal_raw[Math.floor(Math.random()*goal_raw.length)];
+
+
+// Create array for first candidate's attributes
+// Create array for second candidate's attributes
+var att_a_copy__2__11 = [1,2,3,4,5,6];
+var att_b_copy__2__11 = [1,2,3,4,5,6];
+
+// Take indexOf the Dimension variable. This is the order of the Dimension variable
+var mem_index__2__11 = attributes.indexOf("Other members are");
+var lead_index__2__11 = attributes.indexOf("Leader is");
+var hq_index__2__11 = attributes.indexOf("Organization's headquarters located in");
+var type_index__2__11 = attributes.indexOf("Organization is");
+var fund_index__2__11 = attributes.indexOf("Funding mostly comes from");
+var goal_index__2__11 = attributes.indexOf("Aiming to increase voter registration");
+
+
+// Use IndexOf Dimension and replace with appropriate trait for Candidate A
+// For instance, if "Gender" is the 3rd element in the Dimension variable,
+//this will place Male/Female as the 3rd element of the first candidate's attributes.
+att_a_copy__2__11[mem_index__2__11] = mem_a__2__11;
+att_a_copy__2__11[lead_index__2__11] = lead_a__2__11;
+att_a_copy__2__11[hq_index__2__11] = hq_a__2__11;
+att_a_copy__2__11[type_index__2__11] = type_a__2__11;
+att_a_copy__2__11[fund_index__2__11] = fund_a__2__11;
+att_a_copy__2__11[goal_index__2__11] = goal_a__2__11;
+
+// Do the same for the second candidate
+att_b_copy__2__11[mem_index__2__11] = mem_b__2__11;
+att_b_copy__2__11[lead_index__2__11] = lead_b__2__11;
+att_b_copy__2__11[hq_index__2__11] = hq_b__2__11;
+att_b_copy__2__11[type_index__2__11] = type_b__2__11;
+att_b_copy__2__11[fund_index__2__11] = fund_b__2__11;
+att_b_copy__2__11[goal_index__2__11] = goal_b__2__11;
+
+
+// Create list of variables in the for loop
+att_list__2__11 = ["att1__2__11","att2__2__11","att3__2__11","att4__2__11","att5__2__11","att6__2__11"];
+a_list__2__11 = ["a1__2__11","a2__2__11","a3__2__11","a4__2__11","a5__2__11","a6__2__11"];
+b_list__2__11 = ["b1__2__11","b2__2__11","b3__2__11","b4__2__11","b5__2__11","b6__2__11"];
+
+// For elements 1 to 8 in the Dimensions, First Candidate and Second Candidate variables.
+// The first line assigns Dimensions to each "id" tag in the first column of the HTML table
+// The second line assigns first candidate traits to each "id" tag in the second
+//column of the HTML table
+// The third line assigns second candidate traits to each "id" tag in the third
+//column of the HTML table
+for(i=0;i<6;i++){
+    document.getElementById(att_list__2__11[i]).innerHTML= attributes[i];
+    document.getElementById(a_list__2__11[i]).innerHTML= att_a_copy__2__11[i];
+    document.getElementById(b_list__2__11[i]).innerHTML= att_b_copy__2__11[i];    }
+
+//Set embedded data for values produced
+{
+	Qualtrics.SurveyEngine.setEmbeddedData('mem1', mem_a__2__11);
+	Qualtrics.SurveyEngine.setEmbeddedData('lead1', lead_a__2__11);
+	Qualtrics.SurveyEngine.setEmbeddedData( 'hq1', hq_a__2__11);
+	Qualtrics.SurveyEngine.setEmbeddedData('type1', type_a__2__11);
+	Qualtrics.SurveyEngine.setEmbeddedData( 'fund1', fund_a__2__11 );
+	Qualtrics.SurveyEngine.setEmbeddedData('goal1', goal_a__2__11);
+	Qualtrics.SurveyEngine.setEmbeddedData( 'mem2', mem_b__2__11 );
+	Qualtrics.SurveyEngine.setEmbeddedData('lead2', lead_b__2__11);
+	Qualtrics.SurveyEngine.setEmbeddedData( 'hq2', hq_b__2__11 );
+	Qualtrics.SurveyEngine.setEmbeddedData('type2', type_b__2__11);
+	Qualtrics.SurveyEngine.setEmbeddedData( 'fund2',fund_b__2__11);
+	Qualtrics.SurveyEngine.setEmbeddedData('goal2', goal_b__2__11);
+	Qualtrics.SurveyEngine.setEmbeddedData('attributes', attributes)
+};
+
+//for recording attributes in Qualtrics
+Qualtrics.SurveyEngine.addOnload(function()
+{
+/*Place Your Javascript Below This Line*/
+	this.setChoiceValue(1, "${e://Field/mem1}");
+  this.setChoiceValue(2,"${e://Field/lead1}");
+	this.setChoiceValue(3,"${e://Field/hq1}");
+	this.setChoiceValue(4,"${e://Field/type1}");
+	this.setChoiceValue(5,"${e://Field/fund1}");
+	this.setChoiceValue(6,"${e://Field/goal1}");
+	this.setChoiceValue(7, "${e://Field/mem2}");
+  this.setChoiceValue(8,"${e://Field/lead2}");
+	this.setChoiceValue(9,"${e://Field/hq2}");
+	this.setChoiceValue(10,"${e://Field/type2}");
+	this.setChoiceValue(11,"${e://Field/fund2}");
+	this.setChoiceValue(12,"${e://Field/goal2}");
+	this.setChoiceValue(13,"${e://Field/attributes}");
+	/*this.getQuestionContainer().hide();*/
+});

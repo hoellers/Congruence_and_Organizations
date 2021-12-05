@@ -1,0 +1,24 @@
+# ignore all files in folder Data
+Data/**
+
+# ignore all files in folder IRB
+IRB/**
+
+# ignore all files in folder PAP
+PAP/**
+
+# except for actual PAP
+!PAP/Hoellerbauer_PAP.pdf
+
+# ignore old versions of conjoint html code 
+Survey/old_versions/**
+
+# ignore sample qualtrics conjoint survey
+Survey/cj for simon.qsf
+
+# ignore .Rhistory
+.Rhistory
+
+# ignore .Rproj user folder
+.Rproj.user
+
