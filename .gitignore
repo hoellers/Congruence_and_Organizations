@@ -1,7 +1,10 @@
 # ignore all files in folder Data
 Data/**
+# except for cleaning data file
+!Data/clean_data.R
 
 # ignore all files in folder IRB
+IRB
 IRB/**
 
 # ignore all files in folder PAP
