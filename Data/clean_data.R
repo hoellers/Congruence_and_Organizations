@@ -185,7 +185,7 @@ likely <- c("Very unlikely",
             "Neither likely nor unlikely",
             "Very likely",
             "Somewhat likely")
-for(var in eng_conj_out_vars[grepl("meeting_org", eng_conj_out_vars)]){
+for(var in eng_conj_out_vars[grepl("meetingOrg", eng_conj_out_vars)]){
   pssp_survey[[var]] <- factor(pssp_survey[[var]], levels = likely)
 }
 # then for mechanism outcome questions
@@ -230,7 +230,7 @@ eng_long <- eng_long %>%
 
 # clarifying att-level orderings
 mem_ord <- c("mainly non-students", "students and non-students",
-             "mainly students", )
+             "mainly students")
 lead_ord <- c("not a student", "a student")
 hq_ord <- c("Washington, DC", "Richmond, VA", "Raleigh, NC",
              "Chapel Hill, NC")
@@ -262,6 +262,17 @@ eng_long <- eng_long %>%
                                 as.numeric(str_split(meetingForced, 
                                                      " ",
                                                      simplify = T)[,2] == Organization)))
+
+#make agree and likely outcomes numeric versions (for model fitting)
+eng_long <- eng_long %>% 
+  mutate(mechFun_num = as.numeric(mechFun),
+         mechValued_num = as.numeric(mechFun),
+         mechResume_num = as.numeric(mechResume),
+         mechFriends_num = as.numeric(mechFriends),
+         mechTime_num = as.numeric(mechTime),
+         mechMock_num = as.numeric(mechTime),
+         mechTired_num = as.numeric(mechTired),
+         meetingOrg_num = as.numeric(meetingOrg))
 
 ## Values Conjoint ####
 
