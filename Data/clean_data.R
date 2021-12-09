@@ -262,8 +262,8 @@ eng_long <- eng_long %>%
                                 as.numeric(str_split(meetingForced, 
                                                      " ",
                                                      simplify = T)[,2] == Organization)),
-         meeting_org1 = ifelse(is.na(meetingForced), NA,
-                              ifelse(meetingForced == "Organization 1", 1, 0)))
+         meeting_org1 = ifelse(is.na(meetingForced_char), NA,
+                              ifelse(meetingForced_char == "Organization 1", 1, 0)))
 
 #make agree and likely outcomes numeric versions (for model fitting)
 eng_long <- eng_long %>% 
